@@ -1,22 +1,20 @@
 version: '2'
 services:
   nginxforodoo:
-    image: mlebreuil/nginxforodoo
+    build: ./nginxforodoo
     depends_on:
       - odoo
     ports:
       - "80:80"
       - "443:443"
   odoo:
-    image: odoo:10.0
+    build: ./odoo
     depends_on:
       - db
     ports:
       - "8069:8069"
     volumes:
       - odoo-web-data:/var/lib/odoo
-      - ./config:/etc/odoo
-      - ./addons:/mnt/extra-addons
   db:
     image: postgres:9.4
     restart: always
@@ -29,4 +27,3 @@ services:
 volumes:
   odoo-web-data:
   odoo-db-data:
-  
