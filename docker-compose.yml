@@ -10,16 +10,20 @@ services:
   odoo:
     build: ./odoo
     depends_on:
-      - db
+      - odoodb
     ports:
       - "8069:8069"
+    environment:
+    - HOST=odoodb
+    - USER=odoo
+    - PASSWORD=myodoo  
     volumes:
       - odoo-web-data:/var/lib/odoo
-  db:
+  odoodb:
     image: postgres:9.4
     restart: always
     environment:
-      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_PASSWORD=myodoo
       - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
