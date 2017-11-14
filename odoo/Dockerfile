@@ -1,5 +1,6 @@
 FROM odoo:10.0
 
+RUN chown root /etc/odoo/odoo.conf
 RUN rm  /etc/odoo/odoo.conf
 COPY ./odoo.conf /etc/odoo/
 RUN chown odoo /etc/odoo/odoo.conf
