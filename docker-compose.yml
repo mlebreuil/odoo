@@ -1,12 +1,14 @@
 version: '2'
 services:
   nginxforodoo:
-    build: ./nginxforodoo
+    image: nginx
     depends_on:
       - odoo
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - ./nginxforodoo/nginx_odoo.conf:/etc/nginx/nginx.conf:ro     
   odoo:
     image: odoo:10.0
     depends_on:
