@@ -11,6 +11,7 @@ services:
       - ./nginxforodoo/nginx_odoo.conf:/etc/nginx/nginx.conf:ro
       - ./nginxforodoo/ssl/:/etc/nginx/ssl/
       - ./nginxforodoo/www/:/var/www/
+  
   odoo:
     image: odoo:10.0
     depends_on:
@@ -24,6 +25,7 @@ services:
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./odoo/config:/etc/odoo
+  
   odoodb:
     image: postgres:9.4
     restart: always
@@ -33,6 +35,7 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
+
 volumes:
   odoo-web-data:
   odoo-db-data:
