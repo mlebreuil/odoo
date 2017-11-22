@@ -5,4 +5,4 @@ sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
             -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
             certbot/certbot certonly\
             --manual \
-            -d odoo.famillelebreuil.net/
+            -d odoo.famillelebreuil.net
