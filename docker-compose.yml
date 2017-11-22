@@ -9,8 +9,8 @@ services:
       - "443:443"
     volumes:
       - ./nginxforodoo/nginx_odoo.conf:/etc/nginx/nginx.conf:ro
-      - ./nginxforodoo/ssl/:/etc/nginx/ssl/
-      - ./nginxforodoo/www/:/var/www/
+      - ./nginxforodoo/ssl:/etc/nginx/ssl
+      - ./nginxforodoo/www:/var/www
   odoo:
     image: odoo:10.0
     depends_on:
