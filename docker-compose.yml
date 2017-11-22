@@ -19,9 +19,9 @@ services:
     ports:
       - "8069:8069"
     environment:
-    - HOST=odoodb
-    - USER=odoo
-    - PASSWORD=myodoo  
+      - HOST=odoodb
+      - USER=odoo
+      - PASSWORD=myodoo  
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./odoo/config:/etc/odoo
