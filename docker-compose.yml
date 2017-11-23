@@ -10,6 +10,7 @@ services:
     volumes:
       - ./nginxforodoo/nginx_odoo.conf:/etc/nginx/nginx.conf:ro
       - ./nginxforodoo/ssl:/etc/nginx/ssl
+      - ./nginxforodoo/log:/var/log/nginx
   odoo:
     image: odoo:10.0
     depends_on:
