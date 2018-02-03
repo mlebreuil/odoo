@@ -1,4 +1,4 @@
-# Install / renew certificat
+# Install the certificat
 sudo docker pull certbot/certbot
 sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
             -v /home/lebreuilm/ssl/:/etc/letsencrypt \
@@ -6,3 +6,4 @@ sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
             certbot/certbot certonly\
             --standalone \
             -d odoo.famillelebreuil.net
+#renew the certificat
