@@ -1,1 +1,0 @@
-3 16 * * * root certbot renew >> /var/log/nginx/renew.log
