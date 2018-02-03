@@ -1,5 +1,4 @@
-Install / renew certificat
-# Pull the docker image
+# Install / renew certificat
 sudo docker pull certbot/certbot
 sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
             -v /home/lebreuilm/ssl/:/etc/letsencrypt \
