@@ -8,11 +8,11 @@ Install the certificates:
 ```
 sudo docker pull certbot/certbot  
 sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \  
-            -v /home/lebreuilm/ssl/:/etc/letsencrypt \  
+            -v /home/lebreuilm/<service name>/ssl/:/etc/letsencrypt \  
             -v /var/lib/letsencrypt:/var/lib/letsencrypt \  
             certbot/certbot certonly\  
             --standalone \  
-            -d odoo.famillelebreuil.net 
+            -d <service name>.famillelebreuil.net 
  ```
 start the containers  
 ```
@@ -29,9 +29,9 @@ sudo docker-compose stop
 ```
 sudo docker pull certbot/certbot  
 sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \  
-            -v /home/lebreuilm/ssl/:/etc/letsencrypt \  
+            -v /home/lebreuilm/<service name>/ssl/:/etc/letsencrypt \  
             -v /var/lib/letsencrypt:/var/lib/letsencrypt \  
             certbot/certbot certonly\  
             --standalone \  
-            -d odoo.famillelebreuil.net  
+            -d <service name>.famillelebreuil.net  
 ```
