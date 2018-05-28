@@ -11,8 +11,8 @@ sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
             -v /home/lebreuilm/<service name>/ssl/:/etc/letsencrypt \  
             -v /var/lib/letsencrypt:/var/lib/letsencrypt \  
             certbot/certbot certonly\  
-            --standalone \  
-            -d <service name>.famillelebreuil.net 
+            --manual\
+            --preferred-challenges dns -d <service name>.famillelebreuil.net 
  ```
 start the containers  
 ```
@@ -32,6 +32,6 @@ sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
             -v /home/lebreuilm/<service name>/ssl/:/etc/letsencrypt \  
             -v /var/lib/letsencrypt:/var/lib/letsencrypt \  
             certbot/certbot certonly\  
-            --standalone \  
-            -d <service name>.famillelebreuil.net  
+            --manual\
+            --preferred-challenges dns -d <service name>.famillelebreuil.net
 ```
