@@ -17,6 +17,8 @@ sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
 start the containers  
 ```
 sudo docker-compose up
+or
+sudo docker-compose up -d
 ```
 
 # renew the certificat
