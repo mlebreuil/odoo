@@ -17,8 +17,10 @@ sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
 start the containers  
 ```
 sudo docker-compose up
-or
+or:
 sudo docker-compose up -d
+or, tu update the images :
+sudo docker-compose up --force-recreate --build -d
 ```
 
 # renew the certificat
