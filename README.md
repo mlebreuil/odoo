@@ -22,9 +22,17 @@ start the containers
 
 ```bash
 sudo docker-compose up
+```
+
 or:
+
+```bash
 sudo docker-compose up -d
+```
+
 or, tu update the images :
+
+```bash
 sudo docker-compose up --force-recreate --build -d
 ```
 
