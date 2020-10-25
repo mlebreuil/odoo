@@ -1,6 +1,6 @@
 # Create a new service
 Create a directory with the service name in the home folder  
-clone the git repository 
+clone the git repository
 
 ```bach
 git clone https://github.com/mlebreuil/odoo.git
@@ -11,13 +11,14 @@ Install the certificates:
 ```bach
 sudo docker pull certbot/certbot  
 sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \  
-            -v /home/lebreuilm/<service name>/ssl/:/etc/letsencrypt \  
+            -v /home/lebreuilm/odoo/ssl/:/etc/letsencrypt \  
             -v /var/lib/letsencrypt:/var/lib/letsencrypt \  
             certbot/certbot certonly\  
             --manual\
-            --preferred-challenges dns -d <service name>.famillelebreuil.net 
+            --preferred-challenges dns -d odoo.famillelebreuil.net
  ```
- 
+
+Update the nginx config file to point to the right ssl directory  
 start the containers  
 
 ```bash
@@ -38,7 +39,7 @@ sudo docker-compose up --force-recreate --build -d
 
 # renew the certificat
 ## Stop the containers:  
-cd in the odoo directory 
+cd in the odoo directory  
 
 ```bach
 sudo docker-compose stop  
@@ -49,9 +50,9 @@ sudo docker-compose stop
 ```bach
 sudo docker pull certbot/certbot  
 sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
-            -v /home/lebreuilm/<service>/ssl/:/etc/letsencrypt \
+            -v /home/lebreuilm/odoo/ssl/:/etc/letsencrypt \
             -v /var/lib/letsencrypt:/var/lib/letsencrypt \
             certbot/certbot certonly \
             --manual \
-            --preferred-challenges dns -d <service>.famillelebreuil.net
+            --preferred-challenges dns -d odoo.famillelebreuil.net
 ```
