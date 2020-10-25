@@ -37,8 +37,9 @@ or, tu update the images :
 sudo docker-compose up --force-recreate --build -d
 ```
 
-# renew the certificat
-## Stop the containers:  
+# renew the certificate
+
+## Stop the containers
 cd in the odoo directory  
 
 ```bach
@@ -56,3 +57,7 @@ sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
             --manual \
             --preferred-challenges dns -d odoo.famillelebreuil.net
 ```
+
+# Upgrade
+
+[OpenUpgrade guide](https://doc.therp.nl/openupgrade/migration_details.html)  
